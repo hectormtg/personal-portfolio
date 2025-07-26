@@ -1,0 +1,19 @@
+---
+import styles from './personal-info.module.scss'
+
+interface Item {
+  label: string
+  text: string
+}
+
+interface Props {
+  item: Item
+}
+
+const { item } = Astro.props
+---
+
+<li class={styles.card}>
+  <span>{item.text}</span>
+  <p>{item.label}</p>
+</li>

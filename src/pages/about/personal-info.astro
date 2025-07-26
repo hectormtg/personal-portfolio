@@ -1,0 +1,27 @@
+---
+import Card from './card.astro'
+import Detail from './detail.astro'
+import styles from './personal-info.module.scss'
+
+const DETAILS = [
+  { label: 'First Name', text: 'Hector' },
+  { label: 'Last Name', text: 'Tamayo' },
+  { label: 'Address', text: 'Valencia, Venezuela' },
+  { label: 'Phone', text: '+58 412 4346631' },
+  { label: 'Email', text: 'hectormtg@gmail.com' },
+  { label: 'Linkedin', text: '@hectormtg' },
+  { label: 'Languages', text: 'Spanish, English (Upper-medium)' },
+]
+
+const CARDS = [{ label: 'Years of experience', text: '5' }]
+---
+
+<div class={styles.container}>
+  <ul class={styles.details}>
+    {DETAILS.map(item => <Detail item={item} />)}
+  </ul>
+
+  <ul class={styles.cardsContainer}>
+    {CARDS.map(item => <Card item={item} />)}
+  </ul>
+</div>

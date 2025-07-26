@@ -1,0 +1,133 @@
+@use '../styles/breakpoints' as bp;
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/poppins-devanagari-400-normal.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/poppins-devanagari-500-normal.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/poppins-devanagari-800-normal.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../fonts/Poppins/poppins-devanagari-900-normal.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 900;
+  font-style: normal;
+}
+
+:root {
+  --color-gray-light: #2b2a2a;
+  --color-gray: #252525;
+  --color-background: #111111;
+  --color-text: rgba(255, 255, 255);
+  --color-accent: #ffb912;
+
+  --navbar-width: 50px;
+  --mobile-navbar-height: 62px;
+  --navbar-offset: 2rem;
+}
+
+html,
+body {
+  margin: 0;
+  width: 100%;
+  // height: 100%;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  line-height: 1.3;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+}
+
+#root {
+  min-height: 100dvh;
+  display: flex;
+  justify-content: space-between;
+  transition: filter 0.3s;
+  padding-right: calc(var(--navbar-width) + var(--navbar-offset) + 1rem);
+}
+
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+hr {
+  margin: 0;
+  border: none;
+}
+
+a {
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:not([type='button']) {
+  color: var(--color-accent);
+  transition: color 0.2s;
+
+  &:hover {
+    color: hsl(from var(--color-accent) h s calc(l - 20));
+  }
+}
+
+input[type='text'],
+input[type='email'],
+textarea {
+  background-color: var(--color-gray-light);
+  border-radius: 30px;
+  outline: none;
+  border: 1px solid var(--color-background);
+  transition: border-color 0.2s ease;
+  padding: 12px 24px;
+  color: var(--color-text);
+  resize: none;
+  font-family: Poppins;
+
+  &:focus,
+  &:hover {
+    border-color: var(--color-accent);
+  }
+
+  &::placeholder {
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: bp.$sm) {
+  #root {
+    padding: 1rem 1rem calc(var(--mobile-navbar-height) + 2.5rem);
+  }
+
+  body {
+    line-height: 1.5;
+  }
+}

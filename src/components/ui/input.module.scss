@@ -1,0 +1,25 @@
+.textarea {
+  min-height: 100px;
+  font-family: Poppins;
+  border-radius: 20px;
+
+  &::-webkit-scrollbar {
+    width: 10px !important;
+    height: 10px !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-gray);
+    border-radius: 10px;
+    cursor: default !important;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gray);
+    // background: var(--color-gray-light);
+  }
+}

@@ -1,0 +1,25 @@
+---
+import styles from './skills.module.scss'
+
+const SKILLS = [
+  'JavaScript',
+  'TypeScript',
+  'ReactJS',
+  'NextJS',
+  'MongoDB',
+  'ExpressJS',
+  'Socket.io',
+  'Redux',
+  'Ionic Capacitor',
+  'React Native',
+  'Astro',
+  'Prisma',
+  'Postgres',
+  'Sass',
+  'Material UI',
+]
+---
+
+<div class={styles.container}>
+  {SKILLS.map(skill => <span>{skill}</span>)}
+</div>

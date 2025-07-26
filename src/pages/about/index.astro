@@ -1,0 +1,33 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import SectionLayout from '../../layouts/SectionLayout.astro'
+import styles from './about.module.scss'
+import Experience from './experience.astro'
+import PersonalInfo from './personal-info.astro'
+import Section from './section.astro'
+import Skills from './skills.astro'
+
+const title = 'About me'
+---
+
+<Layout>
+  <SectionLayout title={title}>
+    <main class={styles.main}>
+      <Section title='Personal info'>
+        <PersonalInfo />
+      </Section>
+
+      <hr />
+
+      <Section title='My skills'>
+        <Skills />
+      </Section>
+
+      <hr />
+
+      <Section title='Experience'>
+        <Experience />
+      </Section>
+    </main>
+  </SectionLayout>
+</Layout>

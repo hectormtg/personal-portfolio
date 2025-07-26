@@ -1,0 +1,59 @@
+@use '../styles/breakpoints' as bp;
+
+.container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleWrapper {
+  padding: 80px 0;
+}
+
+.titleContainer {
+  position: relative;
+  text-align: center;
+  font-weight: 900;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+
+  h1 {
+    position: relative;
+    z-index: 2;
+
+    span {
+      color: var(--color-accent);
+    }
+  }
+
+  > span {
+    position: absolute;
+    inset: 0;
+    color: var(--color-gray-light);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transform: scale(1.8);
+  }
+}
+
+@media only screen and (max-width: bp.$sm) {
+  .titleWrapper {
+    padding: 0;
+    margin-bottom: 2rem;
+    align-self: flex-start;
+  }
+
+  .titleContainer {
+    font-size: 2rem;
+
+    > span {
+      inset: 0 auto 0 45%;
+      justify-content: flex-start;
+      width: 200%;
+      transform: scale(1.5);
+    }
+  }
+}

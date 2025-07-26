@@ -1,0 +1,42 @@
+---
+import styles from './navbar.module.scss'
+import { Icon } from 'astro-icon/components'
+import { effect } from 'astro:schema'
+import clsx from 'clsx'
+
+const OPTIONS = [
+  { title: 'Home', path: '/', icon: 'home-icon' },
+  { title: 'About', path: '/about', icon: 'user-icon' },
+  { title: 'Portfolio', path: '/portfolio', icon: 'portfolio-icon' },
+  { title: 'Contact', path: '/contact', icon: 'message-icon' },
+]
+
+const { pathname } = Astro.url
+---
+
+<div class={styles.wrapper}>
+  <navbar class={styles.navbar}>
+    {
+      OPTIONS.map(option => (
+        <a
+          href={option.path}
+          class={clsx(styles.option, pathname === option.path && styles.active)}
+          onclick='handleClick(option.path)'
+          id='navbar-link'
+        >
+          <Icon name={option.icon} />
+          <h2 id={styles.title}>{option.title}</h2>
+        </a>
+      ))
+    }
+  </navbar>
+</div>
+
+<script>
+  const anchors = document.querySelectorAll('a#navbar-link')
+  anchors.forEach(anchor =>
+    anchor.addEventListener('click', e => {
+      if (anchor.getAttribute('href') === window.location.pathname) e.preventDefault()
+    })
+  )
+</script>

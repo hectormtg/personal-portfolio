@@ -1,0 +1,48 @@
+---
+import { Icon } from 'astro-icon/components'
+import styles from './experience.module.scss'
+
+const DATA = [
+  {
+    title: 'Software Developer',
+    description: `Venezuela's team developer of Ferreterias EPA point of sale system.`,
+    workplace: 'Intelix Synergy C.A.',
+    period: '2019-2020',
+  },
+  {
+    title: 'Full-Stack Developer',
+    description:
+      'Development of main Front-End architecture. Development of Back-End architecture for additional features. Web and mobile platforms.',
+    workplace: 'Kuentro',
+    period: '2020-present',
+  },
+  {
+    title: 'Full-Stack Developer',
+    description: 'Full-Stack Developer on multiple projects.',
+    workplace: 'Crombie',
+    period: '2023',
+  },
+]
+---
+
+<div class={styles.container}>
+  {
+    DATA.map(data => (
+      <div class={styles.item}>
+        <icon id={styles.icon}>
+          <Icon name='portfolio-icon' />
+        </icon>
+
+        <div>
+          <span>{data.period}</span>
+
+          <h4>
+            {data.title} <span>- {data.workplace}</span>
+          </h4>
+
+          <p>{data.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

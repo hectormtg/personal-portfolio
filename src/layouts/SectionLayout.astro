@@ -1,0 +1,25 @@
+---
+import clsx from 'clsx'
+import styles from './section-layout.module.scss'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+
+const titleWords = title.split(' ')
+const lastWord = titleWords.at(-1)
+titleWords.pop()
+---
+
+<div class={clsx(styles.container, 'contentAnimation')}>
+  <div class={styles.titleWrapper}>
+    <div class={styles.titleContainer}>
+      <h1>{titleWords.join(' ')} <span>{lastWord}</span></h1>
+      <span>{title} </span>
+    </div>
+  </div>
+
+  <slot />
+</div>

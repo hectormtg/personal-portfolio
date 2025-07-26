@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  span {
+    color: var(--color-gray-light);
+    background-color: var(--color-accent);
+    padding: 8px 12px;
+    border-radius: 50px;
+    font-weight: 500;
+  }
+}

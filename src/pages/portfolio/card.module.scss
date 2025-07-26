@@ -1,0 +1,51 @@
+@use '../../styles/breakpoints' as bp;
+
+.card {
+  position: relative;
+  height: 229px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &:hover {
+    > div {
+      opacity: 1;
+
+      span {
+        transform: translateY(0);
+      }
+    }
+  }
+
+  > img {
+    height: 100%;
+  }
+
+  > div {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background-color: var(--color-accent);
+    transition: opacity 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    font-weight: 500;
+
+    span {
+      transform: translateY(-100%);
+      transition: transform 0.5s;
+    }
+  }
+}
+
+@media only screen and (max-width: bp.$sm) {
+  .card {
+    > img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}

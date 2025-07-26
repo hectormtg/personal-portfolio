@@ -1,0 +1,37 @@
+#root {
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-color: var(--color-gray);
+    z-index: 100;
+    animation: 0.9s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 normal both running slideDown;
+  }
+}
+
+.contentAnimation {
+  animation: 1s cubic-bezier(0.77, 0, 0.175, 1) 0s 1 normal both running slideUp;
+  transform: translateY(50px);
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

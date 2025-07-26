@@ -1,0 +1,32 @@
+@use '../../styles/breakpoints' as bp;
+
+@mixin toggleIcons($opacity) {
+  #pagination,
+  #goBackwardsButton,
+  #goForwardButton {
+    transition:
+      opacity 0.2s ease,
+      background-color 0.2s ease;
+    opacity: $opacity;
+  }
+}
+
+.swiper {
+  &:hover {
+    @include toggleIcons(1);
+  }
+}
+
+@include toggleIcons(0);
+
+@media only screen and (max-width: bp.$md) {
+  #pagination {
+    opacity: 1 !important;
+  }
+
+  #goBackwardsButton,
+  #goForwardButton {
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+}

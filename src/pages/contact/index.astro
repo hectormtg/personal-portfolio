@@ -1,0 +1,64 @@
+---
+import { Icon as AstroIcon } from 'astro-icon/components'
+import Button from '../../components/ui/button'
+import Input from '../../components/ui/input'
+import sendIcon from '../../icons/send-icon.svg'
+import Layout from '../../layouts/Layout.astro'
+import SectionLayout from '../../layouts/SectionLayout.astro'
+import styles from './contact.module.scss'
+import clsx from 'clsx'
+import { Tooltip } from '../../components/ui/tooltip'
+---
+
+<Layout>
+  <SectionLayout title='Get in touch'>
+    <main class={styles.container}>
+      <section class={styles.info}>
+        <h3>Don't be shy!</h3>
+        <p>Feel free to get in touch with me. I am always open to discussing new project.</p>
+        <div class={styles.socialMediaContainer}>
+          <Tooltip
+            content='Linkedin'
+            client:load
+          >
+            <a
+              href='https://linkedin.com/in/hectormtg'
+              target='_blank'
+            >
+              <AstroIcon name='linkedin-icon' /></a
+            >
+          </Tooltip>
+        </div>
+      </section>
+
+      <form
+        class={styles.form}
+        id='contact-form'
+      >
+        <Input placeholder='Your name' />
+        <Input
+          placeholder='Your email'
+          type='email'
+        />
+        <Input placeholder='Your subject' />
+        <Input
+          placeholder='Your message'
+          multiline
+        />
+        <Button
+          typeof='submit'
+          endIconSrc={sendIcon.src}
+        >
+          Send message
+        </Button>
+      </form>
+    </main>
+  </SectionLayout>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form')
+  form?.addEventListener('click', e => {
+    e.preventDefault()
+  })
+</script>

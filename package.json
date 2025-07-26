@@ -9,6 +9,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.12.0"
+    "@astrojs/preact": "4.1.0",
+    "astro": "^5.12.0",
+    "astro-font": "1.1.0",
+    "astro-icon": "1.1.5",
+    "clsx": "2.1.1",
+    "preact": "10.26.9",
+    "sass": "1.89.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2"
   }
 }

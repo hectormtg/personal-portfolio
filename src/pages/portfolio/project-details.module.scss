@@ -1,0 +1,41 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.item {
+  display: inline-flex;
+  width: 100%;
+  flex-shrink: 0;
+
+  span {
+    flex-shrink: 0;
+    opacity: 0.8;
+    width: max(130px, 25%);
+
+    svg {
+      fill: var(--color-text);
+      height: 18px;
+      aspect-ratio: 1;
+      margin-bottom: -3px;
+      margin-right: 6px;
+    }
+  }
+
+  p,
+  a {
+    font-weight: 500;
+  }
+}
+
+.gallery {
+  padding: 0 0 1.5rem;
+}

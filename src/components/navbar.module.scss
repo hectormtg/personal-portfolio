@@ -1,0 +1,97 @@
+@use '../styles/breakpoints' as bp;
+
+.wrapper {
+  position: fixed;
+  inset: 0 var(--navbar-offset) 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: var(--navbar-width);
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  width: 100%;
+  border-radius: 100%;
+  background-color: var(--color-gray-light);
+  transition: background-color 0.3s;
+  position: relative;
+
+  &:hover {
+    background-color: var(--color-accent);
+    #title {
+      right: 27px;
+      opacity: 1;
+      border-radius: 50px 0 0 50px;
+    }
+  }
+
+  svg {
+    color: var(--color-text);
+    fill: var(--color-text);
+    height: 16px;
+  }
+
+  #title {
+    position: absolute;
+    background-color: var(--color-accent);
+    color: var(--color-text);
+    font-size: 1rem;
+    inset: 0 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 1.5rem 0 1.5rem;
+    border-radius: 50px;
+    z-index: -1;
+    text-transform: uppercase;
+    font-weight: 500;
+    width: max-content;
+
+    // Animation
+    transition:
+      border-radius 0.3s ease,
+      inset 0.3s ease,
+      opacity 0.3s ease;
+    opacity: 0;
+  }
+}
+
+.active {
+  background-color: var(--color-accent) !important;
+}
+
+@media only screen and (max-width: bp.$sm) {
+  .wrapper {
+    inset: auto 0 0;
+  }
+
+  .navbar {
+    flex-direction: row;
+    justify-content: space-evenly;
+    gap: 8px;
+    width: 100%;
+    background-color: var(--color-gray);
+    height: var(--mobile-navbar-height);
+  }
+
+  .option {
+    background-color: hsl(from var(--color-gray) h s calc(l + 20));
+    width: auto;
+    height: 73%;
+
+    svg {
+      height: 18px;
+      width: auto;
+    }
+  }
+}

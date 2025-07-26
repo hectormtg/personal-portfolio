@@ -1,0 +1,58 @@
+@use '../../styles/breakpoints' as bp;
+
+.container {
+  display: flex;
+  gap: 1rem;
+}
+
+.details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: 600px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  width: 48%;
+
+  span {
+    &:first-of-type {
+      opacity: 0.8;
+    }
+  }
+}
+
+.card {
+  border: 1px solid var(--color-gray-light);
+  border-radius: 6px;
+  padding: 1rem;
+  text-transform: uppercase;
+
+  span {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--color-accent);
+  }
+}
+
+@media only screen and (max-width: bp.$sm) {
+  .container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .details {
+    justify-content: space-between;
+  }
+
+  .item {
+    width: 47%;
+  }
+
+  .cardsContainer {
+    display: flex;
+    justify-content: center;
+  }
+}

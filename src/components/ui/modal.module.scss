@@ -1,0 +1,229 @@
+@use '../../styles/breakpoints' as bp;
+
+// Variables
+$modal-z-index: 1000;
+$backdrop-color: rgba(0, 0, 0, 0.6);
+$modal-bg: var(--color-gray);
+$modal-border-radius: 12px;
+$modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+$text-primary: var(--color-text);
+$text-secondary: #6b7280;
+$border-color: var(--color-gray-light);
+$close-hover-bg: var(--color-accent);
+$close-hover-color: var(--color-gray);
+
+// Animation variables
+$animation-duration: 0.3s;
+$animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $modal-z-index;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  animation: modalFadeIn $animation-duration $animation-easing;
+
+  // Size variants
+  &--small .content {
+    max-width: 400px;
+  }
+
+  &--medium .content {
+    max-width: 600px;
+  }
+
+  &--large .content {
+    max-width: 800px;
+  }
+}
+
+.backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $backdrop-color;
+}
+
+.container {
+  position: relative;
+  max-height: 90vh;
+  animation: modalSlideIn $animation-duration $animation-easing;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: $modal-bg;
+  border-radius: $modal-border-radius;
+  box-shadow: $modal-shadow;
+  display: flex;
+  flex-direction: column;
+  max-height: inherit;
+  overflow: hidden;
+
+  @media (max-width: 640px) {
+    margin: 0;
+    border-radius: 0;
+    height: 100vh;
+    max-height: 100vh;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 1.5rem 0;
+  border-bottom: 1px solid $border-color;
+  padding-bottom: 1rem;
+  // margin-bottom: 1rem;
+
+  @media (max-width: 640px) {
+    padding: 1rem 1rem 0;
+    // margin-bottom: 0.5rem;
+  }
+}
+
+.title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: $text-primary;
+  line-height: 1.25;
+
+  @media (max-width: 640px) {
+    font-size: 1.25rem;
+  }
+}
+
+.closeButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background: none;
+  border-radius: 100%;
+  color: $text-secondary;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+  flex-shrink: 0;
+  margin-left: 1rem;
+
+  &:hover,
+  &:focus {
+    background-color: $close-hover-bg;
+    color: $close-hover-color;
+    outline: none;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0 2px var(--color-accent);
+  }
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.body {
+  flex: 1;
+  // padding: 1.5rem;
+  overflow-y: auto;
+  color: $text-primary;
+
+  // @media (max-width: 640px) {
+  //   padding: 0 1rem;
+  // }
+
+  // Custom scrollbar
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 3px;
+
+    &:hover {
+      background: #a8a8a8;
+    }
+  }
+}
+
+.footer {
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: 1px solid $border-color;
+  margin-top: 1rem;
+
+  @media (max-width: 640px) {
+    padding: 1rem;
+  }
+}
+
+// Animations
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalSlideIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .modal {
+    animation: none;
+  }
+
+  .container {
+    animation: none;
+  }
+}
+
+@media only screen and (max-width: bp.$sm) {
+  .modal {
+    padding: 0;
+  }
+
+  .container {
+    max-height: 100vh;
+    overflow: hidden;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 100%;
+  }
+}
