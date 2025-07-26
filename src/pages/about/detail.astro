@@ -10,7 +10,7 @@ interface Props {
   item: Item
 }
 
-const { item } = Astro.props
+const { item = { label: '', text: '' } } = Astro.props
 ---
 
 <li class={styles.item}>

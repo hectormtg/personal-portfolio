@@ -1,7 +1,6 @@
 ---
 import styles from './navbar.module.scss'
 import { Icon } from 'astro-icon/components'
-import { effect } from 'astro:schema'
 import clsx from 'clsx'
 
 const OPTIONS = [
@@ -12,6 +11,22 @@ const OPTIONS = [
 ]
 
 const { pathname } = Astro.url
+
+function getPathnameRegex(pathname: string) {
+  let cleanedPathname = pathname.replace(/^\/|\/$/g, '')
+
+  const escapedPathname = cleanedPathname.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+  const regexString = `^/${escapedPathname}/?(?:/.*)?$`
+
+  if (cleanedPathname === '') {
+    return new RegExp('^/$')
+  }
+
+  return new RegExp(regexString)
+}
+
+const regex = getPathnameRegex(pathname)
 ---
 
 <div class={styles.wrapper}>
@@ -20,7 +35,7 @@ const { pathname } = Astro.url
       OPTIONS.map(option => (
         <a
           href={option.path}
-          class={clsx(styles.option, pathname === option.path && styles.active)}
+          class={clsx(styles.option, regex.test(option.path) && styles.active)}
           onclick='handleClick(option.path)'
           id='navbar-link'
         >
