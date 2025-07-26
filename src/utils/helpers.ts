@@ -8,3 +8,17 @@ export function debounce(fn: () => void, ms: number) {
     }, ms)
   }
 }
+
+export function getPathnameRegex(pathname: string) {
+  let cleanedPathname = pathname.replace(/^\/|\/$/g, '')
+
+  const escapedPathname = cleanedPathname.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+
+  const regexString = `^/${escapedPathname}/?(?:/.*)?$`
+
+  if (cleanedPathname === '') {
+    return new RegExp('^/$')
+  }
+
+  return new RegExp(regexString)
+}

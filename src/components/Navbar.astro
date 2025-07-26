@@ -2,6 +2,7 @@
 import styles from './navbar.module.scss'
 import { Icon } from 'astro-icon/components'
 import clsx from 'clsx'
+import { getPathnameRegex } from '../utils/helpers'
 
 const OPTIONS = [
   { title: 'Home', path: '/', icon: 'home-icon' },
@@ -11,20 +12,6 @@ const OPTIONS = [
 ]
 
 const { pathname } = Astro.url
-
-function getPathnameRegex(pathname: string) {
-  let cleanedPathname = pathname.replace(/^\/|\/$/g, '')
-
-  const escapedPathname = cleanedPathname.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-
-  const regexString = `^/${escapedPathname}/?(?:/.*)?$`
-
-  if (cleanedPathname === '') {
-    return new RegExp('^/$')
-  }
-
-  return new RegExp(regexString)
-}
 
 const regex = getPathnameRegex(pathname)
 ---
@@ -49,10 +36,14 @@ const regex = getPathnameRegex(pathname)
 </div>
 
 <script>
+  import { getPathnameRegex } from '../utils/helpers'
+
   const anchors = document.querySelectorAll('a#navbar-link')
+  const regex = getPathnameRegex(window.location.pathname)
   anchors.forEach(anchor =>
     anchor.addEventListener('click', e => {
-      if (anchor.getAttribute('href') === window.location.pathname) e.preventDefault()
+      const isMatch = regex.test(anchor.getAttribute('href') as string)
+      if (isMatch) e.preventDefault()
     })
   )
 </script>
