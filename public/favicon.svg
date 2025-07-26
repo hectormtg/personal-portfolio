@@ -1,4 +1,4 @@
 <svg width="208" height="208" viewBox="0 0 208 208" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect x="4" y="4" width="200" height="200" rx="32" fill="black" stroke="black" stroke-width="8"/>
-<path d="M60 40V103.5M60 167V103.5M149 40V103.5M149 167V103.5M60 103.5H149" stroke="#FFB912" stroke-width="24" stroke-linecap="square" stroke-linejoin="bevel"/>
+<path d="M67 52V104.5M67 157V104.5M141 52V104.5M141 157V104.5M67 104.5H141" stroke="#FFB912" stroke-width="24" stroke-linecap="square" stroke-linejoin="bevel"/>
 </svg>
