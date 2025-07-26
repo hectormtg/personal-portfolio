@@ -38,6 +38,7 @@ const regex = getPathnameRegex(pathname)
           class={clsx(styles.option, regex.test(option.path) && styles.active)}
           onclick='handleClick(option.path)'
           id='navbar-link'
+          type='button'
         >
           <Icon name={option.icon} />
           <h2 id={styles.title}>{option.title}</h2>
