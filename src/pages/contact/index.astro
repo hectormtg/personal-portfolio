@@ -6,8 +6,18 @@ import sendIcon from '../../icons/send-icon.svg'
 import Layout from '../../layouts/Layout.astro'
 import SectionLayout from '../../layouts/SectionLayout.astro'
 import styles from './contact.module.scss'
-import clsx from 'clsx'
 import { Tooltip } from '../../components/ui/tooltip'
+import { actions } from 'astro:actions'
+
+const emailResult = Astro.getActionResult(actions.sendEmail)
+
+if (emailResult?.data) {
+  Astro.redirect('/')
+}
+
+if (emailResult?.error) {
+  console.error(emailResult?.error.message)
+}
 ---
 
 <Layout>
@@ -34,19 +44,29 @@ import { Tooltip } from '../../components/ui/tooltip'
       <form
         class={styles.form}
         id='contact-form'
+        action={actions.sendEmail}
+        method='post'
       >
-        <Input placeholder='Your name' />
+        <Input
+          placeholder='Your name'
+          name='name'
+        />
         <Input
           placeholder='Your email'
           type='email'
+          name='email'
         />
-        <Input placeholder='Your subject' />
+        <Input
+          placeholder='Your subject'
+          name='subject'
+        />
         <Input
           placeholder='Your message'
           multiline
+          name='message'
         />
         <Button
-          typeof='submit'
+          type='submit'
           endIconSrc={sendIcon.src}
         >
           Send message
@@ -55,10 +75,3 @@ import { Tooltip } from '../../components/ui/tooltip'
     </main>
   </SectionLayout>
 </Layout>
-
-<script>
-  const form = document.getElementById('contact-form')
-  form?.addEventListener('click', e => {
-    e.preventDefault()
-  })
-</script>

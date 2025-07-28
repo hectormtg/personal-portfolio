@@ -4,6 +4,8 @@
   padding: 2rem;
   display: flex;
   flex-direction: column;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .list {
@@ -12,14 +14,22 @@
   gap: 2rem;
 }
 
+@media only screen and (max-width: 1320px) {
+  .list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .list {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
 @media only screen and (max-width: bp.$sm) {
   .container {
     padding: 0;
     width: 100%;
-  }
-
-  .list {
-    display: flex;
-    flex-direction: column;
   }
 }

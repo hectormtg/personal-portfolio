@@ -30,7 +30,7 @@ interface TouchState {
 export default function Swiper({
   images,
   width = 400,
-  height = 300,
+  height = 350,
   autoPlay = false,
   autoPlayInterval = 3000,
   showNavigation = true,
@@ -239,7 +239,6 @@ export default function Swiper({
     height: `${height}px`,
     position: 'relative',
     overflow: 'hidden',
-    // borderRadius: '8px',
     userSelect: 'none',
     // cursor: touchState.isDragging ? 'grabbing' : 'grab',
   }
@@ -254,8 +253,8 @@ export default function Swiper({
 
   const imageStyle: JSX.CSSProperties = {
     width: `${width}px`,
-    height: `${height}px`,
-    objectFit: 'cover',
+    height: '100%',
+    objectFit: 'contain',
     flexShrink: 0,
   }
 
@@ -302,13 +301,21 @@ export default function Swiper({
     >
       <div style={slidesStyle}>
         {images.map((src, index) => (
-          <img
+          <div
             key={index}
-            src={src || '/placeholder.svg'}
-            alt={`Slide ${index + 1}`}
-            style={imageStyle}
-            draggable={false}
-          />
+            id={`Slide ${index + 1}`}
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+            }}
+          >
+            <img
+              src={src || '/placeholder.svg'}
+              alt={`Slide ${index + 1}`}
+              style={imageStyle}
+              draggable={false}
+            />
+          </div>
         ))}
       </div>
 

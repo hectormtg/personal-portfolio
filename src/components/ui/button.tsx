@@ -1,9 +1,9 @@
 import clsx from 'clsx'
-import type { HTMLAttributes } from 'preact/compat'
+import type { ButtonHTMLAttributes, HTMLAttributes } from 'preact/compat'
 import styles from './button.module.scss'
 import Icon from './icon'
 
-interface Props extends HTMLAttributes<HTMLButtonElement & HTMLAnchorElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement & HTMLAnchorElement> {
   loading?: boolean
   endIconSrc?: string
   href?: string

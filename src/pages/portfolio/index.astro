@@ -4,49 +4,80 @@ import SectionLayout from '../../layouts/SectionLayout.astro'
 import type { IProject } from '../../types/project.types'
 import Card from './card'
 import styles from './portfolio.module.scss'
+import kuentro01 from '../../assets/kuentro-01.png'
+import kuentro02 from '../../assets/kuentro-02.png'
+import kuentro03 from '../../assets/kuentro-03.png'
+import kuentro04 from '../../assets/kuentro-04.png'
+import redshield01 from '../../assets/redshield-01.png'
+import redshield02 from '../../assets/redshield-02.png'
+import redshield03 from '../../assets/redshield-03.png'
+import redshield04 from '../../assets/redshield-04.png'
+import redshield05 from '../../assets/redshield-05.png'
+import redshield06 from '../../assets/redshield-06.png'
+import tradalink01 from '../../assets/tradalink-01.png'
+import tradalink02 from '../../assets/tradalink-02.png'
+import innote01 from '../../assets/innote-01.png'
+import innote02 from '../../assets/innote-02.png'
+import innote03 from '../../assets/innote-03.png'
+import innote04 from '../../assets/innote-04.png'
+import innote05 from '../../assets/innote-05.png'
+import innote06 from '../../assets/innote-06.png'
+import innote07 from '../../assets/innote-07.png'
 
 const DATA: Array<IProject> = [
   {
     title: 'Kuentro',
-    thumbnail:
-      'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    thumbnail: kuentro01.src,
     stack: 'ReactJS, ExpressJS, MongoDB, Material UI, Socket.io, Sass',
     type: 'Web/Mobile application',
     url: 'https://kuentro.ai',
-    images: [
-      'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1682686579976-879b74d6d7ea?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    ],
+    images: [kuentro01.src, kuentro02.src, kuentro03.src, kuentro04.src],
     summary:
       'Responsible for building the Front End architecture of a social media styled jobs platform called Kuentro. Built the Back End architecture for a few additional features like online chat, push notifications and user’s time activity. New features Implementation, overall maintenance and bugs fixes.',
   },
   {
-    title: 'Tradalink',
-    thumbnail:
-      'https://images.unsplash.com/photo-1682686579976-879b74d6d7ea?q=80&w=1167&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'RedShield',
+    thumbnail: redshield01.src,
     stack: 'NextJS, TypeScript, ExpressJS, MongoDB, Material UI',
     type: 'Web application',
     images: [
-      'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      redshield01.src,
+      redshield02.src,
+      redshield03.src,
+      redshield04.src,
+      redshield05.src,
+      redshield06.src,
     ],
+    unavailable: true,
+    summary:
+      'Develop of a private platform called RedShield for a banking company in Panama, where users can submit a payment method’s information, and through a third party banking service, that evaluates the information provided, it displays to the user if the payment method is trustable or not. Develop of the Front End and Back End architecture for the main form and the admin dashboard. The admin dashboard is a closed to public application (only users connected to their VPN and passing an Active Directory authentication can access) where authorized users can manage other administrator users and the customers that use the main form.',
+  },
+  {
+    title: 'Tradalink',
+    thumbnail: tradalink01.src,
+    stack: 'NextJS, TypeScript, ExpressJS, MongoDB, Material UI',
+    type: 'Web application',
+    images: [tradalink01.src, tradalink02.src],
     unavailable: true,
     summary:
       'Develop of new features for an already existing procurement platform to perform negotiations between businesses and suppliers called Tradalink. Develop of a new text input to invite multiple suppliers by email, all at one. Navigation sidebar redesign. New “Teams” feature, where any user can invite buyers or sellers to join the platform and perform actions over the main account, with limited options based on role; the main account can manage all linked users, delete them or change their role. Some adjustments on the Back End side to handle the buyers and sellers direct log in once they were invited. Tweaks on the email delivery system with a service called SendGrid, to add new emails for the buyers and sellers invitations, and add new information on existing suppliers invitations emails.',
   },
   {
-    title: 'RedShield',
-    thumbnail:
-      'https://images.unsplash.com/photo-1752834370400-da734c87f565?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'Innote',
+    thumbnail: innote01.src,
     stack: 'NextJS, TypeScript, ExpressJS, MongoDB, Material UI',
     type: 'Web application',
     images: [
-      'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-      'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      innote01.src,
+      innote02.src,
+      innote03.src,
+      innote04.src,
+      innote05.src,
+      innote06.src,
+      innote07.src,
     ],
     unavailable: true,
-    summary:
-      'Develop of a private platform called RedShield for a banking company in Panama, where users can submit a payment method’s information, and through a third party banking service, that evaluates the information provided, it displays to the user if the payment method is trustable or not. Develop of the Front End and Back End architecture for the main form and the admin dashboard. The admin dashboard is a closed to public application (only users connected to their VPN and passing an Active Directory authentication can access) where authorized users can manage other administrator users and the customers that use the main form.',
+    summary: 'Web application template for multi-purpose projects.',
   },
 ]
 ---
