@@ -1,0 +1,117 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import SectionLayout from '../../../layouts/SectionLayout.astro'
+import type { IProject } from '../../../types/project.types'
+import Card from './card'
+import styles from './portfolio.module.scss'
+import kuentro01 from '../../../assets/kuentro-01.png'
+import kuentro02 from '../../../assets/kuentro-02.png'
+import kuentro03 from '../../../assets/kuentro-03.png'
+import kuentro04 from '../../../assets/kuentro-04.png'
+import redshield01 from '../../../assets/redshield-01.png'
+import redshield02 from '../../../assets/redshield-02.png'
+import redshield03 from '../../../assets/redshield-03.png'
+import redshield04 from '../../../assets/redshield-04.png'
+import redshield05 from '../../../assets/redshield-05.png'
+import redshield06 from '../../../assets/redshield-06.png'
+import tradalink01 from '../../../assets/tradalink-01.png'
+import tradalink02 from '../../../assets/tradalink-02.png'
+import innote01 from '../../../assets/innote-01.png'
+import innote02 from '../../../assets/innote-02.png'
+import innote03 from '../../../assets/innote-03.png'
+import innote04 from '../../../assets/innote-04.png'
+import innote05 from '../../../assets/innote-05.png'
+import innote06 from '../../../assets/innote-06.png'
+import innote07 from '../../../assets/innote-07.png'
+import nuba01 from '../../../assets/nuba-01.png'
+import nuba02 from '../../../assets/nuba-02.png'
+import nuba03 from '../../../assets/nuba-03.png'
+import nuba04 from '../../../assets/nuba-04.png'
+import nuba05 from '../../../assets/nuba-05.png'
+import nuba06 from '../../../assets/nuba-06.png'
+import { getLangFromUrl } from '../../../i18n/utils'
+import { ui } from '../../../i18n/ui'
+
+const lang = getLangFromUrl(Astro.url)
+const t = ui[lang]
+
+const DATA: Array<IProject> = [
+  {
+    title: 'Kuentro',
+    thumbnail: kuentro01.src,
+    stack: 'ReactJS, ExpressJS, MongoDB, Material UI, Socket.io, Sass',
+    type: t.portfolio.kuentro_type,
+    url: 'https://kuentro.ai',
+    images: [kuentro01.src, kuentro02.src, kuentro03.src, kuentro04.src],
+    summary: t.portfolio.kuentro_summary,
+  },
+  {
+    title: 'RedShield',
+    thumbnail: redshield01.src,
+    stack: 'NextJS, TypeScript, ExpressJS, MongoDB, Material UI',
+    type: t.portfolio.redshield_type,
+    images: [
+      redshield01.src,
+      redshield02.src,
+      redshield03.src,
+      redshield04.src,
+      redshield05.src,
+      redshield06.src,
+    ],
+    unavailable: true,
+    summary: t.portfolio.redshield_summary,
+  },
+  {
+    title: 'Tradalink',
+    thumbnail: tradalink01.src,
+    stack: 'NextJS, TypeScript, ExpressJS, MongoDB, Material UI',
+    type: t.portfolio.tradalink_type,
+    images: [tradalink01.src, tradalink02.src],
+    unavailable: true,
+    summary: t.portfolio.tradalink_summary,
+  },
+  {
+    title: 'Innote',
+    thumbnail: innote01.src,
+    stack: 'NextJS, TypeScript, ExpressJS, MongoDB, Material UI',
+    type: t.portfolio.innote_type,
+    images: [
+      innote01.src,
+      innote02.src,
+      innote03.src,
+      innote04.src,
+      innote05.src,
+      innote06.src,
+      innote07.src,
+    ],
+    unavailable: true,
+    summary: t.portfolio.innote_summary,
+  },
+  {
+    title: 'Nuba',
+    thumbnail: nuba01.src,
+    stack: 'Astro, TypeScript, Sass',
+    type: t.portfolio.nuba_type,
+    images: [nuba01.src, nuba02.src, nuba03.src, nuba04.src, nuba05.src, nuba06.src],
+    summary: t.portfolio.nuba_summary,
+    url: 'https://nuba.pro',
+  },
+]
+---
+
+<Layout>
+  <SectionLayout title={t.portfolio.title}>
+    <main class={styles.container}>
+      <section class={styles.list}>
+        {
+          DATA.map(item => (
+            <Card
+              client:load
+              item={item}
+            />
+          ))
+        }
+      </section>
+    </main>
+  </SectionLayout>
+</Layout>

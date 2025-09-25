@@ -1,0 +1,32 @@
+---
+import { ui } from '../../../i18n/ui'
+import { getLangFromUrl } from '../../../i18n/utils'
+import Card from './card.astro'
+import Detail from './detail.astro'
+import styles from './personal-info.module.scss'
+
+const lang = getLangFromUrl(Astro.url)
+const t = ui[lang]
+
+const DETAILS = [
+  { label: t.about.first_name, text: 'Hector' },
+  { label: t.about.last_name, text: 'Tamayo' },
+  { label: t.about.residence, text: 'Valencia, Venezuela' },
+  { label: t.about.phone, text: '+58 412 4346631' },
+  { label: t.about.email, text: 'hectormtg@gmail.com' },
+  { label: 'Linkedin', text: '@hectormtg' },
+  { label: t.about.languages, text: 'Español, English B2 (Upper)' },
+]
+
+const CARDS = [{ label: t.about.years_of_experience, text: '5' }]
+---
+
+<div class={styles.container}>
+  <ul class={styles.details}>
+    {DETAILS.map(item => <Detail item={item} />)}
+  </ul>
+
+  <ul class={styles.cardsContainer}>
+    {CARDS.map(item => <Card item={item} />)}
+  </ul>
+</div>

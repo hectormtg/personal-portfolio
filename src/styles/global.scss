@@ -41,6 +41,16 @@
   --navbar-offset: 2rem;
 }
 
+::selection {
+  color: var(--color-gray-light);
+  background: hsl(from var(--color-accent) h s calc(l + 20));
+}
+
+::-moz-selection {
+  color: var(--color-gray-light);
+  background: hsl(from var(--color-accent) h s calc(l + 20));
+}
+
 html,
 body {
   margin: 0;

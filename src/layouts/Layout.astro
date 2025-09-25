@@ -1,11 +1,17 @@
 ---
 import Navbar from '../components/Navbar.astro'
+import LanguagePicker from '../components/ui/language-picker'
+import { ui } from '../i18n/ui'
+import { getLangFromUrl } from '../i18n/utils'
 import '../styles/animations.scss'
 import '../styles/global.scss'
+
+const lang = getLangFromUrl(Astro.url)
+const t = ui[lang]
 ---
 
 <!doctype html>
-<html lang='en'>
+<html lang={lang}>
   <head>
     <meta charset='UTF-8' />
     <meta
@@ -24,13 +30,12 @@ import '../styles/global.scss'
     <title>Hector Tamayo</title>
     <meta
       name='description'
-      content={`I'm a Web Developer from Latam focused on crafting clean & user-friendly experiences, I'm
-        passionate about building excellent software that improves the lives of those around me.`}
+      content={t.metadata.description}
     />
     <!-- OPEN GRAPH TAGS -->
     <meta
       property='og:title'
-      content='Hector Tamayo | Web Developer'
+      content={t.metadata.title}
     />
     <meta
       property='og:url'
@@ -46,7 +51,7 @@ import '../styles/global.scss'
     />
     <meta
       property='og:site_name'
-      content='Hector Tamayo | Web Developer'
+      content={t.metadata.title}
     />
   </head>
 
@@ -54,6 +59,10 @@ import '../styles/global.scss'
     <div id='root'>
       <slot />
       <Navbar />
+      <LanguagePicker
+        client:load
+        url={Astro.url}
+      />
     </div>
 
     <div id='modal'></div>

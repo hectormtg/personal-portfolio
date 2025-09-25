@@ -1,8 +1,8 @@
 import { useState } from 'preact/hooks'
-import { Modal } from '../../components/ui/modal'
+import { Modal } from '../../../components/ui/modal'
 import styles from './card.module.scss'
 import ProjectDetails from './project-details'
-import type { IProject } from '../../types/project.types'
+import type { IProject } from '../../../types/project.types'
 
 interface Props {
   item: IProject

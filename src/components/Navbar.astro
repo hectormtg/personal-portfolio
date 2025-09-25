@@ -3,12 +3,17 @@ import styles from './navbar.module.scss'
 import { Icon } from 'astro-icon/components'
 import clsx from 'clsx'
 import { getPathnameRegex } from '../utils/helpers'
+import { getLangFromUrl } from '../i18n/utils'
+import { ui } from '../i18n/ui'
+
+const lang = getLangFromUrl(Astro.url)
+const t = ui[lang]
 
 const OPTIONS = [
-  { title: 'Home', path: '/', icon: 'home-icon' },
-  { title: 'About', path: '/about', icon: 'user-icon' },
-  { title: 'Portfolio', path: '/portfolio', icon: 'portfolio-icon' },
-  { title: 'Contact', path: '/contact', icon: 'message-icon' },
+  { title: t.navbar.home, path: '/', icon: 'home-icon' },
+  { title: t.navbar.about, path: '/about', icon: 'user-icon' },
+  { title: t.navbar.portfolio, path: '/portfolio', icon: 'portfolio-icon' },
+  { title: t.navbar.contact, path: '/contact', icon: 'message-icon' },
 ]
 
 const { pathname } = Astro.url
@@ -21,9 +26,8 @@ const regex = getPathnameRegex(pathname)
     {
       OPTIONS.map(option => (
         <a
-          href={option.path}
+          href={`/${lang}${option.path}`}
           class={clsx(styles.option, regex.test(option.path) && styles.active)}
-          onclick='handleClick(option.path)'
           id='navbar-link'
           type='button'
         >

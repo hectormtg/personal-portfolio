@@ -1,15 +1,15 @@
 'use client'
 
 import { useEffect, useRef, useState } from 'preact/hooks'
-import Icon from '../../components/ui/icon'
-import Swiper from '../../components/ui/swiper'
-import desktopIcon from '../../icons/desktop-icon.svg'
-import codeIcon from '../../icons/html-tags-icon.svg'
-import linkIcon from '../../icons/link-icon.svg'
-import type { IProject } from '../../types/project.types'
+import Icon from '../../../components/ui/icon'
+import Swiper from '../../../components/ui/swiper'
+import desktopIcon from '../../../icons/desktop-icon.svg'
+import codeIcon from '../../../icons/html-tags-icon.svg'
+import linkIcon from '../../../icons/link-icon.svg'
+import type { IProject } from '../../../types/project.types'
 import styles from './project-details.module.scss'
-import { STYLE_DEFAULTS } from '../../constants/styles.constants'
-import { useResize } from '../../hooks/useResize'
+import { STYLE_DEFAULTS } from '../../../constants/styles.constants'
+import { useResize } from '../../../hooks/useResize'
 
 interface Props {
   project: IProject

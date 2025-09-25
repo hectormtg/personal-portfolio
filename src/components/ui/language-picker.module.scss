@@ -1,0 +1,108 @@
+@use '../../styles/breakpoints' as bp;
+
+.button {
+  border-radius: 100%;
+  background-color: var(--color-gray-light);
+  position: fixed;
+  inset: var(--navbar-offset) var(--navbar-offset) 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: var(--color-accent);
+    #title {
+      right: 27px;
+      opacity: 1;
+      border-radius: 50px 0 0 50px;
+    }
+  }
+
+  svg {
+    width: auto;
+    height: 22px;
+    aspect-ratio: 1;
+    color: var(--color-text);
+    fill: var(--color-text);
+  }
+}
+
+#title {
+  position: absolute;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  font-size: 1rem;
+  inset: 0 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 1.5rem 0 1.5rem;
+  border-radius: 50px;
+  z-index: -1;
+  text-transform: uppercase;
+  font-weight: 500;
+  width: max-content;
+
+  // Animation
+  transition:
+    border-radius 0.3s ease,
+    inset 0.3s ease,
+    opacity 0.3s ease;
+  opacity: 0;
+}
+
+@mixin activeLang {
+  background-color: hsl(from var(--color-gray) h s calc(l + 20));
+  color: var(--color-accent);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 1rem;
+  min-width: 250px;
+
+  > * {
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 6px;
+    transition:
+      background-color 0.2s,
+      color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.125rem;
+
+    &:hover {
+      @include activeLang;
+    }
+
+    span {
+      font-size: 0.8em;
+      opacity: 0.6;
+    }
+  }
+}
+
+.active {
+  @include activeLang;
+}
+
+@media only screen and (max-width: bp.$sm) {
+  .button {
+    background-color: hsl(from var(--color-gray) h s calc(l + 20));
+    width: auto;
+    height: 73%;
+
+    svg {
+      height: 18px;
+      width: auto;
+    }
+  }
+}

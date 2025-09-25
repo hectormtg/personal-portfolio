@@ -1,14 +1,14 @@
 'use client'
 
+import clsx from 'clsx'
 import type { ComponentChildren } from 'preact'
+import { createPortal } from 'preact/compat'
 import { useEffect, useRef, useState } from 'preact/hooks'
 import styles from './modal.module.scss'
-import clsx from 'clsx'
-import { createPortal } from 'preact/compat'
 
 export interface ModalProps {
-  id: string
-  title: string
+  id?: string
+  title?: string
   isOpen: boolean
   onClose: () => void
   size?: 'small' | 'medium' | 'large'

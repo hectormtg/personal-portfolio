@@ -10,7 +10,8 @@ export function debounce(fn: () => void, ms: number) {
 }
 
 export function getPathnameRegex(pathname: string) {
-  let cleanedPathname = pathname.replace(/^\/|\/$/g, '')
+  const langPrefixRegex = /^\/[a-z]{2}\/?/
+  const cleanedPathname = pathname.replace(langPrefixRegex, '/').replace(/^\/|\/$/g, '')
 
   const escapedPathname = cleanedPathname.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 

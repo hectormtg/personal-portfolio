@@ -1,31 +1,34 @@
 ---
-import Layout from '../../layouts/Layout.astro'
-import SectionLayout from '../../layouts/SectionLayout.astro'
+import { ui } from '../../../i18n/ui'
+import { getLangFromUrl } from '../../../i18n/utils'
+import Layout from '../../../layouts/Layout.astro'
+import SectionLayout from '../../../layouts/SectionLayout.astro'
 import styles from './about.module.scss'
 import Experience from './experience.astro'
 import PersonalInfo from './personal-info.astro'
 import Section from './section.astro'
 import Skills from './skills.astro'
 
-const title = 'About me'
+const lang = getLangFromUrl(Astro.url)
+const t = ui[lang]
 ---
 
 <Layout>
-  <SectionLayout title={title}>
+  <SectionLayout title={t.about.title}>
     <main class={styles.main}>
-      <Section title='Personal info'>
+      <Section title={t.about.personal_info}>
         <PersonalInfo />
       </Section>
 
       <hr />
 
-      <Section title='My skills'>
+      <Section title={t.about.my_skills}>
         <Skills />
       </Section>
 
       <hr />
 
-      <Section title='Experience'>
+      <Section title={t.about.experience}>
         <Experience />
       </Section>
     </main>

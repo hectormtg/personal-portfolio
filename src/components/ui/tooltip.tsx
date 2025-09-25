@@ -120,21 +120,19 @@ export function Tooltip({
   }
 
   useEffect(() => {
-    if (isVisible) {
-      calculatePosition()
+    calculatePosition()
 
-      const handleResize = () => calculatePosition()
-      const handleScroll = () => calculatePosition()
+    const handleResize = () => calculatePosition()
+    const handleScroll = () => calculatePosition()
 
-      window.addEventListener('resize', handleResize)
-      window.addEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('scroll', handleScroll)
 
-      return () => {
-        window.removeEventListener('resize', handleResize)
-        window.removeEventListener('scroll', handleScroll)
-      }
+    return () => {
+      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('scroll', handleScroll)
     }
-  }, [isVisible])
+  }, [isVisible, triggerRef, tooltipRef])
 
   useEffect(() => {
     return () => {
@@ -177,8 +175,7 @@ export function Tooltip({
         {children}
       </div>
 
-      {isVisible &&
-        typeof document !== 'undefined' &&
+      {typeof document !== 'undefined' &&
         createPortal(
           <div
             ref={tooltipRef}
@@ -188,6 +185,7 @@ export function Tooltip({
             style={{
               left: `${tooltipPosition.x}px`,
               top: `${tooltipPosition.y}px`,
+              ...(!isVisible ? { opacity: '0' } : {}),
             }}
           >
             {content}

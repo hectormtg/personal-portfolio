@@ -1,0 +1,42 @@
+---
+import clsx from 'clsx'
+import Button from '../../components/ui/button'
+import { ui } from '../../i18n/ui'
+import { getLangFromUrl } from '../../i18n/utils'
+import arrowIcon from '../../icons/arrow-right-icon.svg'
+import Layout from '../../layouts/Layout.astro'
+import styles from './index.module.scss'
+
+export async function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }]
+}
+
+const lang = getLangFromUrl(Astro.url)
+const t = ui[lang]
+---
+
+<Layout>
+  <main class={clsx(styles.main, 'contentAnimation')}>
+    <section class={styles.imageContainer}></section>
+    <section class={styles.info}>
+      <h1>
+        {t.hero.title_1}
+        <span>{t.hero.title_2}</span>
+      </h1>
+
+      <p>
+        {t.hero.description}
+      </p>
+
+      <Button
+        endIconSrc={arrowIcon.src}
+        href='/about'
+        style={{
+          fontSize: '1rem',
+        }}
+      >
+        {t.hero.cta}
+      </Button>
+    </section>
+  </main>
+</Layout>

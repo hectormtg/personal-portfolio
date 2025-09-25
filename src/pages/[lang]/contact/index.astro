@@ -1,13 +1,15 @@
 ---
 import { Icon as AstroIcon } from 'astro-icon/components'
-import Button from '../../components/ui/button'
-import Input from '../../components/ui/input'
-import sendIcon from '../../icons/send-icon.svg'
-import Layout from '../../layouts/Layout.astro'
-import SectionLayout from '../../layouts/SectionLayout.astro'
+import Button from '../../../components/ui/button'
+import Input from '../../../components/ui/input'
+import sendIcon from '../../../icons/send-icon.svg'
+import Layout from '../../../layouts/Layout.astro'
+import SectionLayout from '../../../layouts/SectionLayout.astro'
 import styles from './contact.module.scss'
-import { Tooltip } from '../../components/ui/tooltip'
+import { Tooltip } from '../../../components/ui/tooltip'
 import { actions } from 'astro:actions'
+import { getLangFromUrl } from '../../../i18n/utils'
+import { ui } from '../../../i18n/ui'
 
 const emailResult = Astro.getActionResult(actions.sendEmail)
 
@@ -18,14 +20,17 @@ if (emailResult?.data) {
 if (emailResult?.error) {
   console.error(emailResult?.error.message)
 }
+
+const lang = getLangFromUrl(Astro.url)
+const t = ui[lang]
 ---
 
 <Layout>
-  <SectionLayout title='Get in touch'>
+  <SectionLayout title={t.contact.title}>
     <main class={styles.container}>
       <section class={styles.info}>
-        <h3>Don't be shy!</h3>
-        <p>Feel free to get in touch with me. I am always open to discussing new project.</p>
+        <h3>{t.contact.subtitle}</h3>
+        <p>{t.contact.description}</p>
         <div class={styles.socialMediaContainer}>
           <Tooltip
             content='Linkedin'
@@ -48,20 +53,20 @@ if (emailResult?.error) {
         method='post'
       >
         <Input
-          placeholder='Your name'
+          placeholder={t.contact.name}
           name='name'
         />
         <Input
-          placeholder='Your email'
+          placeholder={t.contact.email}
           type='email'
           name='email'
         />
         <Input
-          placeholder='Your subject'
+          placeholder={t.contact.subject}
           name='subject'
         />
         <Input
-          placeholder='Your message'
+          placeholder={t.contact.message}
           multiline
           name='message'
         />
@@ -69,7 +74,7 @@ if (emailResult?.error) {
           type='submit'
           endIconSrc={sendIcon.src}
         >
-          Send message
+          {t.contact.cta}
         </Button>
       </form>
     </main>

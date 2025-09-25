@@ -10,17 +10,23 @@
   "compilerOptions": {
     "baseUrl": "/",
     "paths": {
+      "@/*": [
+        "src/*"
+      ],
       "@components/*": [
         "src/components/*"
       ],
       "@layouts/*": [
         "src/layouts/*"
       ],
+      "@assessts/*": [
+        "src/assessts/*"
+      ],
       "@icons/*": [
         "src/icons/*"
       ]
     },
     "jsx": "react-jsx",
-    "jsxImportSource": "preact"
+    "jsxImportSource": "preact",
   }
 }
