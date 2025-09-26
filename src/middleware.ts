@@ -16,8 +16,10 @@ export const onRequest = defineMiddleware(async (context, next) => {
     return next()
   }
 
-  if (validDefaultLangRoutes.has(pathname)) {
-    const newUrl = new URL(`/${defaultLang}${pathname}`, context.url).toString()
+  const fixedPathname = pathname.replace(/\/+$/, '')
+
+  if (validDefaultLangRoutes.has(fixedPathname)) {
+    const newUrl = new URL(`/${defaultLang}${fixedPathname}`, context.url).toString()
     return context.redirect(newUrl, 301) // 301 = Permanent Redirect
   }
 
