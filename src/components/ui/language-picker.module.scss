@@ -97,12 +97,12 @@
 @media only screen and (max-width: bp.$sm) {
   .button {
     background-color: hsl(from var(--color-gray) h s calc(l + 20));
-    width: auto;
-    height: 73%;
+    inset: 1rem 1rem auto auto;
+    width: 45px;
+    height: 45px;
+  }
 
-    svg {
-      height: 18px;
-      width: auto;
-    }
+  #title {
+    display: none;
   }
 }

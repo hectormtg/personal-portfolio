@@ -29,6 +29,17 @@
   font-style: normal;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+[tabindex='-1']:focus {
+  outline: 0 !important;
+}
+
 :root {
   --color-gray-light: #2b2a2a;
   --color-gray: #252525;
@@ -134,7 +145,7 @@ textarea {
 
 @media only screen and (max-width: bp.$sm) {
   #root {
-    padding: 1rem 1rem calc(var(--mobile-navbar-height) + 2.5rem);
+    padding: 5rem 1rem calc(var(--mobile-navbar-height) + 2.5rem);
   }
 
   body {

@@ -32,6 +32,7 @@ const Card = ({ item }: Props) => {
         onClose={() => setIsOpen(false)}
         title={item.title}
         id={`details-${item.title}`}
+        fluid
       >
         <ProjectDetails project={item} />
       </Modal>

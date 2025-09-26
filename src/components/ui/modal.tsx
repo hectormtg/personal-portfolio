@@ -16,6 +16,7 @@ export interface ModalProps {
   closeOnEscape?: boolean
   children: ComponentChildren
   footer?: ComponentChildren
+  fluid?: boolean
 }
 
 const isBrowser = import.meta.env.SSR === false
@@ -31,6 +32,7 @@ export function Modal({
   closeOnEscape = true,
   children,
   footer,
+  fluid,
 }: ModalProps) {
   const modalRef = useRef<HTMLDivElement>(null)
   const previousFocusRef = useRef<HTMLElement | null>(null)
@@ -153,8 +155,8 @@ export function Modal({
         onClick={handleBackdropClick}
       />
 
-      <div className={styles.container}>
-        <div className={styles.content}>
+      <div className={clsx(styles.container, fluid && styles.fluidContainer)}>
+        <div className={clsx(styles.content, fluid && styles.fluidContent)}>
           <header className={styles.header}>
             <h2
               className={styles.title}

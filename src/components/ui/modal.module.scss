@@ -70,7 +70,9 @@ $animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
   flex-direction: column;
   max-height: inherit;
   overflow: hidden;
+}
 
+.fluidContent {
   @media (max-width: 640px) {
     margin: 0;
     border-radius: 0;
@@ -217,7 +219,7 @@ $animation-easing: cubic-bezier(0.4, 0, 0.2, 1);
     padding: 0;
   }
 
-  .container {
+  .fluidContainer {
     max-height: 100vh;
     overflow: hidden;
   }
