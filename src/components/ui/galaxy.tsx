@@ -1,6 +1,6 @@
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl'
 import { useEffect, useRef } from 'preact/hooks'
-import './Galaxy.css'
+import './galaxy.css'
 import clsx from 'clsx'
 
 const vertexShader = `
