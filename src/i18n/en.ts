@@ -59,4 +59,14 @@ export default {
     message: 'Your message',
     cta: 'Send message',
   },
+  404: {
+    cta: 'Take me home',
+    joke_1: `Oops, this page doesn't exist... maybe in another timeline? 🌌`,
+    joke_2: `Page not found. It's probably debugging itself in production 🐛`,
+    joke_3: `This page went to get coffee and never came back ☕`,
+    joke_4: `This page is taking a mental health day 🧘‍♂️`,
+    joke_5: `Looks like this page got lost in the git merge conflicts 🔀`,
+    joke_6: `This page exists in the multiverse, just not this one 🚀`,
+    joke_7: `Page not found. It's probably stuck in an infinite loop somewhere 🔄`,
+  },
 }

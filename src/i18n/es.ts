@@ -59,4 +59,14 @@ export default {
     message: 'Tu mensaje',
     cta: 'Enviar mensaje',
   },
+  404: {
+    cta: 'Ir al inicio',
+    joke_1: 'Ups, esta página no existe, ¿Tal vez en otra línea temporal? 🌌',
+    joke_2: `Página no encontrada. Probablemente se esté debugueando en producción. 🐛`,
+    joke_3: `Esta página se fue a tomar un café y nunca regresó ☕`,
+    joke_4: `Esta página se tomó el día libre para descansar. 🧘‍♂️`,
+    joke_5: `Parece que esta página se perdió en los merge conflicts de git. 🔀`,
+    joke_6: `Esta página existe en el multiverso, pero no en este. 🚀`,
+    joke_7: `Página no encontrada. Probablemente esté atrapada en un bucle infinito en algún lugar. 🔄`,
+  },
 }

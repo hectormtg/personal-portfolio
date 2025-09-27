@@ -7,7 +7,7 @@ import { defineConfig } from 'astro/config'
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
-  integrations: [icon(), preact()],
+  integrations: [icon(), preact({ compat: true })],
   adapter: netlify(),
   i18n: {
     defaultLocale: 'es',

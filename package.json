@@ -11,15 +11,22 @@
   "dependencies": {
     "@astrojs/netlify": "5.5.4",
     "@astrojs/preact": "4.1.0",
+    "@gsap/react": "2.1.2",
     "astro": "4.15.8",
     "astro-font": "1.1.0",
     "astro-icon": "1.1.5",
     "clsx": "2.1.1",
+    "gsap": "3.13.0",
+    "ogl": "1.0.11",
     "preact": "10.26.9",
     "resend": "4.7.0",
     "sass": "1.89.2"
   },
   "devDependencies": {
     "prettier": "^3.6.2"
+  },
+  "overrides": {
+    "react": "preact/compat@latest",
+    "react-dom": "preact/compat@latest"
   }
 }

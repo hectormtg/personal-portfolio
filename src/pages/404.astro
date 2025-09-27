@@ -1,0 +1,14 @@
+---
+import { getLangFromUrl } from '../i18n/utils'
+import Layout from '../layouts/Layout.astro'
+import NotFound from './not-found'
+
+const lang = getLangFromUrl(Astro.url)
+---
+
+<Layout>
+  <NotFound
+    client:load
+    lang={lang}
+  />
+</Layout>
