@@ -1,8 +1,8 @@
 export default {
   metadata: {
     title: 'Hector Tamayo | Web Developer',
-    description: `I'm a Web Developer from Latam focused on crafting clean & user-friendly experiences, I am
-        passionate about building excellent software that improves the lives of those around me.`,
+    description: `I'm a Web Developer from Latam focused on crafting clean and user-friendly experiences, I am
+        passionate about building top-tier software that improves the lives of my clients and their users.`,
   },
   common: {
     language: 'Language',
@@ -18,8 +18,8 @@ export default {
   hero: {
     title_1: `Hector Tamayo.`,
     title_2: 'Web Developer.',
-    description: `I'm a Web Developer from Latam focused on crafting clean & user-friendly experiences, I am
-        passionate about building excellent software that improves the lives of those around me.`,
+    description: `I'm a Web Developer from Latam focused on crafting clean and user-friendly experiences, I am
+        passionate about building top-tier software that improves the lives of my clients and their users.`,
     cta: `More about me`,
   },
   about: {

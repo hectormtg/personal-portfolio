@@ -1,7 +1,7 @@
 export default {
   metadata: {
     title: 'Hector Tamayo | Desarrollador Web',
-    description: `Soy un desarrollador web de Latinoamérica enfocado en crear experiencias impecables y fáciles de usar. Me apasiona crear software de excelente calidad que mejore la vida de mis clientes y usuarios.`,
+    description: `Soy un desarrollador web de Latinoamérica enfocado en crear experiencias impecables y amigables. Me apasiona crear software de excelente calidad que mejore la vida de mis clientes y sus usuarios.`,
   },
   common: {
     language: 'Idioma',
@@ -17,7 +17,7 @@ export default {
   hero: {
     title_1: `Hector Tamayo.`,
     title_2: 'Desarrollador Web',
-    description: `Soy un desarrollador web de Latinoamérica enfocado en crear experiencias impecables y fáciles de usar. Me apasiona crear software de excelente calidad que mejore la vida de mis clientes y usuarios.`,
+    description: `Soy un desarrollador web de Latinoamérica enfocado en crear experiencias impecables y amigables. Me apasiona crear software de excelente calidad que mejore la vida de mis clientes y sus usuarios.`,
     cta: `Más sobre mi`,
   },
   about: {

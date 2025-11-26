@@ -1,5 +1,6 @@
 ---
 import clsx from 'clsx'
+import image from '../../assets/profile-picture.jpeg'
 import Button from '../../components/ui/button'
 import { ui } from '../../i18n/ui'
 import { getLangFromUrl } from '../../i18n/utils'
@@ -17,7 +18,13 @@ const t = ui[lang]
 
 <Layout>
   <main class={clsx(styles.main, 'contentAnimation')}>
-    <section class={styles.imageContainer}></section>
+    <section class={styles.imageContainer}>
+      <img
+        src={image.src}
+        id='profile-picture'
+        alt='Hector Tamayo'
+      />
+    </section>
     <section class={styles.info}>
       <h1>
         {t.hero.title_1}
@@ -40,3 +47,11 @@ const t = ui[lang]
     </section>
   </main>
 </Layout>
+
+<script>
+  const img = document.getElementById('profile-picture')
+  if (img) {
+    img.ondragstart = e => e.preventDefault()
+    img.oncontextmenu = e => e.preventDefault()
+  }
+</script>
