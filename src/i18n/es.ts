@@ -37,17 +37,22 @@ export default {
     title: 'Mi Portafolio',
     kuentro_type: 'Aplicación web/movil',
     kuentro_summary:
-      'Responsable de desarrollar la arquitectura front-end de la plataforma. Desarrollo de arquitectura back-end en Nodejs para funcionalidades adicionales, como chat en línea, notificaciones push y control de estadísticas sobre la actividad de los usuarios.',
+      'Kuentro es una plataforma de empleos y una herramienta de reclutamiento para empresas. En este proyecto fui responsable de desarrollar la arquitectura front-end de la aplicación (Web, Android y iOS). También desarrollé la arquitectura back-end de una API en Nodejs para funcionalidades adicionales, como chat en línea, notificaciones push y control de estadísticas sobre la actividad de los usuarios.',
     redshield_type: 'Aplicación web',
     redshield_summary:
-      'Desarrollo de una plataforma privada para una empresa bancaria en Panamá, donde los usuarios pueden enviar la información de un método de pago y, a través de un servicio bancario externo que evalúa la información proporcionada, se muestra al usuario si el método de pago es confiable o no. Desarrollo de la arquitectura front-end y back-end para el formulario principal y el panel de control del administrador. El panel de control del administrador es una aplicación cerrada al público (solo pueden acceder los usuarios conectados a su VPN y que superen una autenticación de Active Directory), donde los usuarios autorizados pueden gestionar a otros usuarios administradores y a sus clientes.',
+      'En este proyecto desarrollé una plataforma privada para una empresa bancaria en Panamá, donde los usuarios pueden enviar la información de un método de pago (tarjetas de crédito o débito) y, a través de un servicio bancario externo que evalúa la información proporcionada, se muestra al usuario si el método de pago es confiable o no. También desarrollé un panel de control (dashboard de administración) para realizar gestiones internas de la aplicación.',
     tradalink_type: 'Aplicación web',
     tradalink_summary:
-      'Desarrollo de nuevas funciones para una plataforma de compras ya existente con el fin de llevar a cabo negociaciones entre empresas y proveedores. Desarrollo de una nueva función de entrada de texto para invitar a varios proveedores por correo electrónico, todos a la vez. Rediseño de la barra lateral de navegación. Nueva función «Equipos», en la que cualquier usuario puede invitar a compradores o vendedores a unirse a la plataforma y realizar acciones en la cuenta principal, con opciones limitadas en función del rol; la cuenta principal puede gestionar todos los usuarios vinculados, eliminarlos o cambiar su rol. Ajustes en el back-end para gestionar el inicio de sesión directo de compradores y vendedores una vez invitados. Modificaciones en el sistema de envío de correos electrónicos con un servicio llamado SendGrid, para añadir nuevos correos electrónicos para las invitaciones a compradores y vendedores, y añadir nueva información en los correos electrónicos de invitación a proveedores existentes.',
+      'Tradalink es una plataforma de procura que facilita el proceso de compra/venta entre empresas y proveedores. Para este proyecto desarrollé un nuevo input de texto para invitar a múltiples proveedores por correo electrónico (estilo Gmail). Ajusté el diseño y el layout de la barra lateral de navegación. Desarrollé la función «Equipos», en la que cualquier usuario puede invitar a compradores o vendedores a unirse a la plataforma y realizar acciones en la cuenta principal, con opciones limitadas en función del rol. Ajustes en el back-end para gestionar el inicio de sesión directo de compradores y vendedores una vez invitados. Modificaciones en el sistema de envío de correos electrónicos con el servicio SendGrid, para añadir nuevos correos electrónicos para las invitaciones a compradores y vendedores.',
     innote_type: 'Aplicación web',
     innote_summary: 'Plantilla de aplicación web para proyectos multipropósito.',
     nuba_type: 'Página web',
-    nuba_summary: 'Página web para una empresa de ingeniería y construcción.',
+    nuba_summary: 'Página web estática para una empresa de ingeniería y construcción.',
+  },
+  portfolio_details: {
+    project_label: 'Proyecto',
+    preview_label: 'Visitar',
+    summary_label: 'Resumen',
   },
   contact: {
     title: 'Ponte en contacto',
@@ -58,6 +63,22 @@ export default {
     subject: 'Asunto',
     message: 'Tu mensaje',
     cta: 'Enviar mensaje',
+  },
+  experience: {
+    intelix: {
+      title: 'Desarrollador de aplicaciones',
+      description:
+        'Desarrollador en el equipo de Venezuela para el sistema de caja registradora de Ferreterías EPA.',
+    },
+    kuentro: {
+      title: 'Desarrollador Full-Stack',
+      description:
+        'Desarrollo de la arquitecutra de Front-End principal. Desarrollo de arquetectura Back-End para una API en NodeJS. Plataformas web, Android y iOS.',
+    },
+    crombie: {
+      title: 'Desarrollador Full-Stack',
+      description: 'Desarrollador Full-Stack en múltiples proyectos para distintos clientes.',
+    },
   },
   404: {
     cta: 'Ir al inicio',

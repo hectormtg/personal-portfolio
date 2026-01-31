@@ -1,24 +1,28 @@
 ---
 import { Icon } from 'astro-icon/components'
 import styles from './experience.module.scss'
+import { getLangFromUrl } from '../../../i18n/utils'
+import { ui } from '../../../i18n/ui'
+
+const lang = getLangFromUrl(Astro.url)
+const t = ui[lang]
 
 const DATA = [
   {
-    title: 'Software Developer',
-    description: `Venezuela's team developer of Ferreterias EPA point of sale system.`,
+    title: t.experience.intelix.title,
+    description: t.experience.intelix.description,
     workplace: 'Intelix Synergy C.A.',
     period: '2019-2020',
   },
   {
-    title: 'Full-Stack Developer',
-    description:
-      'Development of main Front-End architecture. Development of Back-End architecture for additional features. Web and mobile platforms.',
+    title: t.experience.kuentro.title,
+    description: t.experience.kuentro.description,
     workplace: 'Kuentro',
     period: '2020-present',
   },
   {
-    title: 'Full-Stack Developer',
-    description: 'Full-Stack Developer on multiple projects.',
+    title: t.experience.crombie.title,
+    description: t.experience.crombie.description,
     workplace: 'Crombie',
     period: '2023',
   },

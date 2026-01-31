@@ -38,16 +38,21 @@ export default {
   portfolio: {
     title: 'My Portfolio',
     kuentro_type: 'Web/Mobile application',
-    kuentro_summary: `Responsible for developing the platform's front-end architecture. Development of back-end architecture in Nodejs for additional features, such as online chat, push notifications, and control of statistics on user activity.`,
+    kuentro_summary: `Kuentro is a job and recruitment platform . In this project, I was responsible for developing the front-end architecture of the application (Web, Android, and iOS). I also developed the back-end architecture of an API in Nodejs for additional features, such as online chat, push notifications, and metrics tracking on user activity.`,
     redshield_type: 'Web application',
-    redshield_summary: `Develop of a private platform for a banking company in Panama, where users can submit a payment method's information, and through a third party banking service, that evaluates the information provided, it displays to the user if the payment method is trustable or not. Develop of the front-end and back-end architecture for the main form and the admin dashboard. The admin dashboard is a closed to public application (only users connected to their VPN and passing an Active Directory authentication can access) where authorized users can manage other administrator users and their customers.`,
+    redshield_summary: `In this project, I developed a private platform for a banking company in Panama, where users can submit payment method information (credit or debit cards) and, through an external banking service that evaluates the information provided, the user is shown whether the payment method is reliable or not. I also developed a control panel (administration dashboard) for internal management of the application.`,
     tradalink_type: 'Web application',
     tradalink_summary:
-      'Develop of new features for an already existing procurement platform to perform negotiations between businesses and suppliers. Develop of a new text input to invite multiple suppliers by email, all at once. Navigation sidebar redesign. New “Teams” feature, where any user can invite buyers or sellers to join the platform and perform actions over the main account, with limited options based on role; the main account can manage all linked users, delete them or change their role. Adjustments on the back-end side to handle the buyers and sellers direct log-in once they were invited. Tweaks on the email delivery system with a service called SendGrid, to add new emails for the buyers and sellers invitations, and add new information on existing suppliers invitations emails.',
+      'Tradalink is a procurement platform that streamlines the buying/selling process between companies and suppliers. For this project, I developed a new text input to invite multiple suppliers by email (like Gmail). I improved the design and layout of the navigation sidebar. I developed the “Teams” feature, where any user can invite buyers or sellers to join the platform and perform actions on the main account, with limited options depending on their role. Adjustments on the back-end side to manage direct login for buyers and sellers once invited. Modifications to the email delivery system with the SendGrid service to add new emails for invitations to buyers and sellers.',
     innote_type: 'Web application',
     innote_summary: 'Web application template for multi-purpose projects.',
     nuba_type: 'Web site',
     nuba_summary: 'Web site for an engineering & construction company.',
+  },
+  portfolio_details: {
+    project_label: 'Project',
+    preview_label: 'Preview',
+    summary_label: 'Summary',
   },
   contact: {
     title: 'Get in touch',
@@ -58,6 +63,21 @@ export default {
     subject: 'Subject',
     message: 'Your message',
     cta: 'Send message',
+  },
+  experience: {
+    intelix: {
+      title: 'Software Developer',
+      description: "Venezuela's team developer of Ferreterias EPA point of sale system.",
+    },
+    kuentro: {
+      title: 'Full-Stack Developer',
+      description:
+        'Development of main Front-End architecture. Development of Back-End architecture for a NodeJS API. Web, Android and iOS platforms.',
+    },
+    crombie: {
+      title: 'Full-Stack Developer',
+      description: 'Full-Stack Developer on multiple projects for different clients.',
+    },
   },
   404: {
     cta: 'Take me home',

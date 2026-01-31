@@ -3,12 +3,14 @@ import { Modal } from '../../../components/ui/modal'
 import styles from './card.module.scss'
 import ProjectDetails from './project-details'
 import type { IProject } from '../../../types/project.types'
+import type { Languages } from '../../../types/languages.types'
 
 interface Props {
   item: IProject
+  lang: Languages
 }
 
-const Card = ({ item }: Props) => {
+const Card = ({ item, lang }: Props) => {
   const [isOpen, setIsOpen] = useState(false)
 
   const handleClick = () => {
@@ -34,7 +36,10 @@ const Card = ({ item }: Props) => {
         id={`details-${item.title}`}
         fluid
       >
-        <ProjectDetails project={item} />
+        <ProjectDetails
+          project={item}
+          lang={lang}
+        />
       </Modal>
     </>
   )

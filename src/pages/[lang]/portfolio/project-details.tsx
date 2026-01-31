@@ -10,15 +10,20 @@ import type { IProject } from '../../../types/project.types'
 import styles from './project-details.module.scss'
 import { STYLE_DEFAULTS } from '../../../constants/styles.constants'
 import { useResize } from '../../../hooks/useResize'
+import { ui } from '../../../i18n/ui'
+import type { Languages } from '../../../types/languages.types'
 
 interface Props {
   project: IProject
+  lang: Languages
 }
 
-const ProjectDetails = ({ project }: Props) => {
+const ProjectDetails = ({ project, lang }: Props) => {
   const [width, setWidth] = useState(STYLE_DEFAULTS.MODAL_WIDTH)
 
   const containerRef = useRef<HTMLDivElement>(null)
+
+  const t = ui[lang]
 
   useResize({
     onResize: () => setWidth(containerRef.current?.clientWidth || STYLE_DEFAULTS.MODAL_WIDTH),
@@ -36,7 +41,7 @@ const ProjectDetails = ({ project }: Props) => {
     >
       <section className={styles.list}>
         <Item
-          label='Project'
+          label={t.portfolio_details.project_label}
           text={project.type}
           icon={<Icon src={desktopIcon.src} />}
         />
@@ -47,17 +52,23 @@ const ProjectDetails = ({ project }: Props) => {
         />
         {project.url && (
           <Item
-            label='Preview'
+            label={t.portfolio_details.preview_label}
             url={project.url}
             icon={<Icon src={linkIcon.src} />}
           />
         )}
       </section>
 
-      <section className={styles.gallery}>
-        <Swiper
-          images={project.images}
-          width={width}
+      <Swiper
+        images={project.images}
+        width={width}
+      />
+
+      <section className={styles.summary}>
+        <Item
+          label={t.portfolio_details.summary_label}
+          text={project.summary}
+          icon={<Icon src={codeIcon.src} />}
         />
       </section>
     </div>
